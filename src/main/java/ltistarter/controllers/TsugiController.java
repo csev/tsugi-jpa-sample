@@ -14,7 +14,11 @@
  */
 package ltistarter.controllers;
 
+import java.util.Enumeration;
+
 import ltistarter.lti.LTIRequest;
+import ltistarter.repository.AllRepositories;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,13 +34,33 @@ import java.security.Principal;
 @RequestMapping("/tsugi")
 public class TsugiController extends BaseController {
 
+    @Autowired
+    AllRepositories allRepositories;
+
     @RequestMapping({"", "/"})
     public String home(HttpServletRequest req, Principal principal, Model model) {
 System.out.println("YO");
         commonModelPopulate(req, principal, model);
+
+	Enumeration<String> parameterNames = req.getParameterNames();
+        while (parameterNames.hasMoreElements()) {
+            String paramName = parameterNames.nextElement();
+            System.out.print(paramName);
+            System.out.print("=");
+            String[] paramValues = req.getParameterValues(paramName);
+            for (int i = 0; i < paramValues.length; i++) {
+                String paramValue = paramValues[i];
+                if ( i > 0 ) System.out.print(", ");
+                System.out.print(paramValue);
+            }
+	        System.out.println();
+        }
+
         model.addAttribute("name", "tsugi");
         req.getSession().setAttribute("login", "oauth");
-        LTIRequest ltiRequest = (LTIRequest) req.getAttribute(LTIRequest.class.getName());
+        // LTIRequest ltiRequest = (LTIRequest) req.getAttribute(LTIRequest.class.getName());
+	    LTIRequest ltiRequest = new LTIRequest(req, allRepositories, false);
+        System.out.println("LTI Request="+ltiRequest.toString());
         if (ltiRequest != null) {
             model.addAttribute("lti", true);
             model.addAttribute("ltiContext", ltiRequest.getLtiContextId());
