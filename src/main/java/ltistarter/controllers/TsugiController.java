@@ -34,7 +34,7 @@ public class TsugiController extends BaseController {
     public String home(HttpServletRequest req, Principal principal, Model model) {
 System.out.println("YO");
         commonModelPopulate(req, principal, model);
-        model.addAttribute("name", "lti1p");
+        model.addAttribute("name", "tsugi");
         req.getSession().setAttribute("login", "oauth");
         LTIRequest ltiRequest = (LTIRequest) req.getAttribute(LTIRequest.class.getName());
         if (ltiRequest != null) {
