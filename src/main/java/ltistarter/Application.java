@@ -98,7 +98,7 @@ public class Application extends WebMvcConfigurerAdapter {
         @Override
         protected void configure(HttpSecurity http) throws Exception {
             log.info("configure()");
-	    http.antMatcher("/tsugi/**").csrf().disable();
+            http.antMatcher("/tsugi/**").csrf().disable();
         }
     }
 

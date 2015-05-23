@@ -42,7 +42,7 @@ public class TsugiController extends BaseController {
 System.out.println("YO");
         commonModelPopulate(req, principal, model);
 
-	Enumeration<String> parameterNames = req.getParameterNames();
+        Enumeration<String> parameterNames = req.getParameterNames();
         while (parameterNames.hasMoreElements()) {
             String paramName = parameterNames.nextElement();
             System.out.print(paramName);
@@ -53,13 +53,13 @@ System.out.println("YO");
                 if ( i > 0 ) System.out.print(", ");
                 System.out.print(paramValue);
             }
-	        System.out.println();
+            System.out.println();
         }
 
         model.addAttribute("name", "tsugi");
         req.getSession().setAttribute("login", "oauth");
         // LTIRequest ltiRequest = (LTIRequest) req.getAttribute(LTIRequest.class.getName());
-	    LTIRequest ltiRequest = new LTIRequest(req, allRepositories, false);
+        LTIRequest ltiRequest = new LTIRequest(req, allRepositories, false);
         System.out.println("LTI Request="+ltiRequest.toString());
         if (ltiRequest != null) {
             model.addAttribute("lti", true);
