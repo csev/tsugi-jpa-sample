@@ -1,7 +1,7 @@
 Sample Tsugi Application for Java
 =================================
 
-This is a sample Tsugi based webapp.  It depends on the basiclti-util library from Sakai and the https://github.com/csev/tsugi-java-lib
+This is a sample Tsugi based webapp.  It depends on the basiclti-util library from Sakai and the https://github.com/csev/tsugi-j-lib
 
 Build
 -----
@@ -17,7 +17,7 @@ environment.
 
     http://www.tsugi.org/
 
-Then checkout and build https://github.com/csev/tsugi-java-lib and compile that jar:
+Then checkout and build https://github.com/csev/tsugi-j-lib and compile that jar:
 
     mvn install
     
