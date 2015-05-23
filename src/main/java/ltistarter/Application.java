@@ -84,16 +84,6 @@ public class Application extends WebMvcConfigurerAdapter {
         return new ConcurrentMapCacheManager(); // not appropriate for production, try JCacheCacheManager or HazelcastCacheManager instead
     }
 
-    // Spring Security
-    @Autowired
-    @Order(Ordered.HIGHEST_PRECEDENCE + 10)
-    @SuppressWarnings("SpringJavaAutowiringInspection")
-    public void configureSimpleAuthUsers(AuthenticationManagerBuilder auth) throws Exception {
-        auth.inMemoryAuthentication()
-                .withUser("admin").password("admin").roles("ADMIN", "USER")
-                .and().withUser("user").password("user").roles("USER");
-    }
-
     @Configuration
     @Order(1) // HIGHEST
     public static class LTISecurityConfigurerAdapter extends WebSecurityConfigurerAdapter {
@@ -108,29 +98,7 @@ public class Application extends WebMvcConfigurerAdapter {
         @Override
         protected void configure(HttpSecurity http) throws Exception {
             log.info("configure()");
-	    http.csrf().disable();
-        }
-    }
-
-    @Order(23) // MED
-    @Configuration
-    public static class FormLoginConfigurationAdapter extends WebSecurityConfigurerAdapter {
-        @Override
-        protected void configure(HttpSecurity http) throws Exception {
-            http.antMatcher("/form/**").authorizeRequests().anyRequest().authenticated()
-                    .and().formLogin().permitAll().loginPage("/form/login").loginProcessingUrl("/form/login")
-                    .and().logout().logoutUrl("/form/logout").invalidateHttpSession(true).logoutSuccessUrl("/");
-        }
-    }
-
-    @Order(45) // LOW
-    @Configuration
-    public static class BasicAuthConfigurationAdapter extends WebSecurityConfigurerAdapter {
-        @Override
-        protected void configure(HttpSecurity http) throws Exception {
-            // basic auth protection for the /basic path
-            http.antMatcher("/basic/**").authorizeRequests().anyRequest().authenticated()
-                    .and().httpBasic();
+	    http.antMatcher("/tsugi/**").csrf().disable();
         }
     }
 
