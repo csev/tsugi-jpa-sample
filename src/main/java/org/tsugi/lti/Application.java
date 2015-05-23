@@ -12,9 +12,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package ltistarter;
+package org.tsugi.lti;
 
-import ltistarter.repository.AllRepositories;
+import org.tsugi.lti.repository.AllRepositories;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,7 +44,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 
 import javax.annotation.PostConstruct;
 
-@ComponentScan("ltistarter")
+@ComponentScan("org.tsugi.lti")
 @Configuration
 @EnableAutoConfiguration
 @EnableTransactionManagement // enables TX management and @Transaction

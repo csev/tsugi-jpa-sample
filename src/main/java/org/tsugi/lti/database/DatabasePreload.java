@@ -12,14 +12,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package ltistarter.database;
+package org.tsugi.lti.database;
 
-import ltistarter.model.LtiKeyEntity;
-import ltistarter.model.LtiUserEntity;
-import ltistarter.model.ProfileEntity;
-import ltistarter.repository.LtiKeyRepository;
-import ltistarter.repository.LtiUserRepository;
-import ltistarter.repository.ProfileRepository;
+import org.tsugi.lti.model.LtiKeyEntity;
+import org.tsugi.lti.model.LtiUserEntity;
+import org.tsugi.lti.model.ProfileEntity;
+import org.tsugi.lti.repository.LtiKeyRepository;
+import org.tsugi.lti.repository.LtiUserRepository;
+import org.tsugi.lti.repository.ProfileRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

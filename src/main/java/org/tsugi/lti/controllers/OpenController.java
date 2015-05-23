@@ -12,29 +12,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package ltistarter.controllers;
+package org.tsugi.lti.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpServletRequest;
 import java.security.Principal;
 
 /**
- * This is the default home (i.e. root or "/") controller which should be wide open
- * (no security)
+ * This controller should be protected by no auth (it is public access)
  */
 @Controller
-public class HomeController extends BaseController {
+@RequestMapping("/open")
+public class OpenController extends BaseController {
 
-    @RequestMapping(method = RequestMethod.GET)
-    public String index(HttpServletRequest req, Principal principal, Model model) {
-        log.info("HOME: " + req);
+    @RequestMapping({"", "/"})
+    public String home(HttpServletRequest req, Principal principal, Model model) {
         commonModelPopulate(req, principal, model);
-        model.addAttribute("name", "HOME");
-        counterService.increment("home");
+        model.addAttribute("name", "open (no auth)");
         return "home"; // name of the template
     }
 

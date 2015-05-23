@@ -12,10 +12,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package ltistarter.lti;
+package org.tsugi.lti.lti;
 
-import ltistarter.model.LtiKeyEntity;
-import ltistarter.repository.LtiKeyRepository;
+import org.tsugi.lti.model.LtiKeyEntity;
+import org.tsugi.lti.repository.LtiKeyRepository;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

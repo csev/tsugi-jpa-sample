@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package ltistarter.controllers;
+package org.tsugi.lti.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

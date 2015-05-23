@@ -12,12 +12,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package ltistarter.controllers;
+package org.tsugi.lti.controllers;
 
 import java.util.Enumeration;
 
-import ltistarter.lti.LTIRequest;
-import ltistarter.repository.AllRepositories;
+import org.tsugi.lti.lti.LTIRequest;
+import org.tsugi.lti.repository.AllRepositories;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
