@@ -28,10 +28,17 @@
 
   <dependencies>
     <dependency>
-      <groupId>org.tsugi</groupId>
-      <artifactId>tsugi-j-lib</artifactId>
-      <version>0.1-SNAPSHOT</version>
+       <groupId>org.sakaiproject.basiclti</groupId>
+       <artifactId>basiclti-util</artifactId>
+       <version>11-SNAPSHOT</version>
     </dependency>
+
+    <dependency>
+        <groupId>org.tsugi</groupId>
+        <artifactId>tsugi-j-lib</artifactId>
+        <version>0.1-SNAPSHOT</version>
+    </dependency>
+
     <dependency>
       <groupId>org.apache.commons</groupId>
       <artifactId>commons-lang3</artifactId>
@@ -121,12 +128,6 @@
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-test</artifactId>
       <scope>test</scope>
-    </dependency>
-
-    <dependency>
-       <groupId>org.sakaiproject.basiclti</groupId>
-       <artifactId>basiclti-util</artifactId>
-       <version>11-SNAPSHOT</version>
     </dependency>
 
   </dependencies>
