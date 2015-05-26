@@ -30,7 +30,8 @@
     <dependency>
        <groupId>org.sakaiproject.basiclti</groupId>
        <artifactId>basiclti-util</artifactId>
-       <version>11-SNAPSHOT</version>
+       <version>10.4</version>
+       <!-- <version>11-SNAPSHOT</version> -->
     </dependency>
 
     <dependency>
