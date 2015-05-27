@@ -16,8 +16,8 @@ package org.tsugi.lti.controllers;
 
 import java.util.Enumeration;
 
-import org.tsugi.lti.LTIRequest;
-import org.tsugi.lti.repository.AllRepositories;
+// import org.tsugi.lti.LTIRequest;
+import org.tsugi.zippy.TsugiService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -35,7 +35,7 @@ import java.security.Principal;
 public class TsugiController extends BaseController {
 
     @Autowired
-    AllRepositories allRepositories;
+    TsugiService tsugiService;
 
     @RequestMapping({"", "/"})
     public String home(HttpServletRequest req, Principal principal, Model model) {
@@ -57,16 +57,7 @@ System.out.println("YO");
         }
 
         model.addAttribute("name", "tsugi");
-        req.getSession().setAttribute("login", "oauth");
-        // LTIRequest ltiRequest = (LTIRequest) req.getAttribute(LTIRequest.class.getName());
-        LTIRequest ltiRequest = new LTIRequest(req, allRepositories, false);
-        System.out.println("LTI Request="+ltiRequest.toString());
-        if (ltiRequest != null) {
-            model.addAttribute("lti", true);
-            model.addAttribute("ltiContext", ltiRequest.getLtiContextId());
-            model.addAttribute("ltiUser", ltiRequest.getLtiUserDisplayName());
-            model.addAttribute("ltiLink", ltiRequest.getLtiLinkId());
-        }
+        System.out.println("check="+tsugiService.check());
         return "tsugi"; // name of the template
     }
 

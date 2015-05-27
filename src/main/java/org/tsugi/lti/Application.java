@@ -14,8 +14,6 @@
  */
 package org.tsugi.lti;
 
-import org.tsugi.lti.repository.AllRepositories;
-import org.tsugi.zippy.Tsugi;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -90,16 +88,9 @@ System.out.println("+=+=++++++++++++++++++++++++++++ main");
     @Configuration
     @Order(1) // HIGHEST
     public static class LTISecurityConfigurerAdapter extends WebSecurityConfigurerAdapter {
-        @Autowired
-        AllRepositories allRepositories;
-        @Autowired
-        Tsugi theTsugi;
 
         @PostConstruct
         public void init() {
-System.out.println("+=+=++++++++++++++++++++++++++++ init ar="+allRepositories);
-System.out.println("+=+=++++++++++++++++++++++++++++ init tt="+theTsugi);
-            theTsugi.check();
             log.info("init()");
         }
 
