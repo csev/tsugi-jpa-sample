@@ -17,7 +17,7 @@ package org.tsugi.jpa.controllers;
 import java.util.Enumeration;
 
 // import org.tsugi.jpa.LTIRequest;
-import org.tsugi.zippy.TsugiService;
+import org.tsugi.lti.TsugiService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

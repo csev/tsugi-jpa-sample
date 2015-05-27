@@ -43,7 +43,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 
 import javax.annotation.PostConstruct;
 
-@ComponentScan({"org.tsugi.jpa", "org.tsugi.zippy"})
+@ComponentScan({"org.tsugi.jpa", "org.tsugi.lti"})
 @Configuration
 @EnableAutoConfiguration
 @EnableTransactionManagement // enables TX management and @Transaction
