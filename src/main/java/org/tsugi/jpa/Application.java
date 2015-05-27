@@ -98,6 +98,8 @@ System.out.println("+=+=++++++++++++++++++++++++++++ main");
         protected void configure(HttpSecurity http) throws Exception {
             log.info("configure()");
             http.antMatcher("/tsugi/**").csrf().disable();
+            //http.headers().frameOptions().sameOrigin();
+            http.headers().frameOptions().disable();
         }
     }
 
