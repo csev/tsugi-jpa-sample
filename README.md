@@ -58,6 +58,19 @@ To enable the debugging port (localhost:8000) when using spring-boot:run, use th
 
     mvn clean install spring-boot:run -Pdebug
     
+Git Details
+-----------
+
+If you forked my repo and want to grab the latest changes, do 
+the following once:
+
+    git remote add upstream https://github.com/csev/tsugi-j-sample
+
+Then from time to time when you want to pull mods and update your fork:
+
+    git pull upstream master
+    git push origin master
+
 History
 -------
 
