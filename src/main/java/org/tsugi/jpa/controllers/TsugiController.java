@@ -12,11 +12,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.tsugi.lti.controllers;
+package org.tsugi.jpa.controllers;
 
 import java.util.Enumeration;
 
-// import org.tsugi.lti.LTIRequest;
+// import org.tsugi.jpa.LTIRequest;
 import org.tsugi.zippy.TsugiService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

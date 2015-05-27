@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.tsugi.lti;
+package org.tsugi.jpa;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -43,7 +43,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 
 import javax.annotation.PostConstruct;
 
-@ComponentScan({"org.tsugi.lti", "org.tsugi.zippy"})
+@ComponentScan({"org.tsugi.jpa", "org.tsugi.zippy"})
 @Configuration
 @EnableAutoConfiguration
 @EnableTransactionManagement // enables TX management and @Transaction
