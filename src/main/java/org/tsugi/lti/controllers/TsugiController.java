@@ -16,7 +16,7 @@ package org.tsugi.lti.controllers;
 
 import java.util.Enumeration;
 
-import org.tsugi.lti.lti.LTIRequest;
+import org.tsugi.lti.LTIRequest;
 import org.tsugi.lti.repository.AllRepositories;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
