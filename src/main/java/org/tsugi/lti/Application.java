@@ -15,6 +15,7 @@
 package org.tsugi.lti;
 
 import org.tsugi.lti.repository.AllRepositories;
+import org.tsugi.zippy.Tsugi;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,7 +45,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 
 import javax.annotation.PostConstruct;
 
-@ComponentScan("org.tsugi.lti")
+@ComponentScan({"org.tsugi.lti", "org.tsugi.zippy"})
 @Configuration
 @EnableAutoConfiguration
 @EnableTransactionManagement // enables TX management and @Transaction
@@ -57,6 +58,8 @@ public class Application extends WebMvcConfigurerAdapter {
     final static Logger log = LoggerFactory.getLogger(Application.class);
 
     public static void main(String[] args) {
+System.out.println("+=+=++++++++++++++++++++++++++++ main");
+
         SpringApplication.run(Application.class, args);
     }
 
@@ -89,9 +92,14 @@ public class Application extends WebMvcConfigurerAdapter {
     public static class LTISecurityConfigurerAdapter extends WebSecurityConfigurerAdapter {
         @Autowired
         AllRepositories allRepositories;
+        @Autowired
+        Tsugi theTsugi;
 
         @PostConstruct
         public void init() {
+System.out.println("+=+=++++++++++++++++++++++++++++ init ar="+allRepositories);
+System.out.println("+=+=++++++++++++++++++++++++++++ init tt="+theTsugi);
+            theTsugi.check();
             log.info("init()");
         }
 
