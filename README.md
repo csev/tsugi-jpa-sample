@@ -45,7 +45,7 @@ Type in the dev "secret" and switch the launch URL to
 
     http://localhost:8080/tsugi
     
-And press "Launch"
+And press "Launch" - it should look like <a href="https://raw.githubusercontent.com/csev/tsugi-j-sample/master/success.png" target="_blank">this</a>.
 
 Customizing
 -----------
