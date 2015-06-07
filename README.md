@@ -1,5 +1,5 @@
-Sample Tsugi Application for Java
-=================================
+Sample Tsugi Application for Java Persistence Architecure
+=========================================================
 
 This is a sample Tsugi based webapp.  It depends on the basiclti-util library from Sakai and the https://github.com/csev/tsugi-j-lib
 
